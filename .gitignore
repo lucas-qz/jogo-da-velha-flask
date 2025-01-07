@@ -1,5 +1,4 @@
-chatgpt .txt
-LER .txt
+*.txt
 venv/
 __pycache__/
 *.pyc
