@@ -45,7 +45,8 @@ pip install -r requirements.txt
 
 
 ## ⚓ Estrutura do Projeto
-- app.py: Arquivo principal que executa o servidor Flask.
+- app.py: Arquivo principal que executa o servidor Flask e contem as rotas da API.
+- models: Diretório contendo as funções do projeto.
 - generate_dataset.py: Arquivo para criar um Dataset de histórico de jogadas.
 - train_model.py: Arquivo para treinar o modelo de Machine Learning
 - game_history.csv: Histórico com os resultados dos jogos para melhorias futuras no modelo.
@@ -60,7 +61,7 @@ Para iniciar o servidor Flask, execute o seguinte comando:
 ```bash
 flask run
 ```
-O servidor estará disponível em http://127.0.0.1:5000
+A partir desse momento as rotas da API já poderão ser acessadas.
 <br/><br/>
 
 
@@ -127,7 +128,7 @@ Response:
 ```json
 {
   "board": [["O", "", ""], ["", "", ""], ["", "X", ""]],
-  "result": "Game ongoing"
+  "result": "Jogo em andamento"
 }
 ```
 <br/><br/>
@@ -162,12 +163,12 @@ GET http://127.0.0.1:5000/api/player-stats/1
 Response:
 ```json
 {
-  "draws": 0,
-  "losses": 0,
-  "name": "Jogador 1",
-  "player_id": 1,
-  "total_games": 1,
-  "wins": 1
+  "1-player_id": 1,
+  "2-nome": "Jogador 1",
+  "3-total_jogos": 1,
+  "4-vitorias": 1,
+  "5-empates": 0,
+  "6-perdas": 0
 }
 ```
 <br/><br/>
@@ -186,7 +187,7 @@ Response:
     "Ótimo trabalho! Sua estratégia está funcionando bem. Continue assim.",
     "Jogue mais partidas para melhorar sua estratégia e ganhar experiência."
   ],
-  "name": "Jogador 1",
+  "nome": "Jogador 1",
   "player_id": 1
 }
 ```
